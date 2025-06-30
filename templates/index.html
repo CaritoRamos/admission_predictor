@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Predicción UNMSM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Predicción de Ingreso a la Universidad</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+      <label for="carrera">Carrera:</label>
+      <input type="text" name="carrera" id="carrera" required>
+
+      <label for="puntaje">Puntaje obtenido:</label>
+      <input type="number" step="0.01" name="puntaje" id="puntaje" required>
+
+      <label for="periodo">Periodo:</label>
+      <select name="periodo" id="periodo">
+        <option value="I">I</option>
+        <option value="II">II</option>
+      </select>
+
+      <label for="nro_postulacion">Número de postulación:</label>
+      <input type="number" name="nro_postulacion" id="nro_postulacion" required>
+
+      <label for="sexo">Sexo:</label>
+      <select name="sexo" id="sexo">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
+
+      <button type="submit">Predecir Ingreso</button>
+    </form>
+  </div>
+</body>
+</html>
