@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 
+# 🔁 IMPORTANTE: Importa tu clase personalizada antes de cargar el modelo
+from custom_transformers import softMax
+
 app = Flask(__name__)
 
 # Cargar modelo y transformador
